@@ -1,61 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
-			#menu-icon {
-				display: inline-block;
-				width: 30px;
-				height: 30px;
-				position: relative;
-			}
-			#menu-icon > div {
-				width: 100%;
-				height: 2px;
-				background-color: black;
-				margin: 6px 0;
-				transition: all 0.3s ease;
-				position: relative;
-			}
-			
-			#menu-icon.collapsed > div {
-				/* uncollapsed 30px width 30px height; use pythagorean theorem to find an approximate; 40px width in this case, instead of 42.212 px*/
-				width: 40px;
-				position: absolute;
-				top: 0;
-				margin: 0;
-			}
-			
-			#menu-icon.collapsed > div:nth-child(1) {
-				transform: rotate(45deg);
-				transform-origin: left;
-				left: 0;
-			}
-			
-			#menu-icon.collapsed > div:nth-child(2) {
-				transform: rotate(-45deg);
-				transform-origin: right;
-				right: 0;
-			}
-			
-			#menu-icon.collapsed > div:nth-child(3) {
-				display: none;
-			}
-		</style>
+		<script src="MenuIcon.js"></script>
 	</head>
 	<body>
-		<p>Hello World!</p>
-		<a id="menu-icon" href="#">
-			<div></div>
-			<div></div>
-			<div></div>
-		</a>
 		
-		<script>
-			let icon = document.querySelector('#menu-icon');
-			icon.addEventListener('click', event =>
-			{
-				icon.classList.toggle('collapsed');
-			});
-		</script>
+		<menu-icon></menu-icon>
+		
 	</body>
 </html>
